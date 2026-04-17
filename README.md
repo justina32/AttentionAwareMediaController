@@ -7,7 +7,9 @@ Built as an exploration of real-time on-device ML inference pipelines: how to tu
 
 ## Demo
 
-<video src="AttentionAwareController-V1 Demo.mp4" controls width="480"></video>
+https://github.com/user-attachments/assets/b7094cea-f850-4394-bd76-4c4a93e9f2f7
+
+
 
 The latency readout in the top-left is the time from `ImageProxy.analyze()` to the ML Kit callback — typically 20–40ms on a mid-range device.
 
