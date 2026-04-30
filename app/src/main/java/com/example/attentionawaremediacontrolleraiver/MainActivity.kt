@@ -59,6 +59,11 @@ class MainActivity : AppCompatActivity() {
         observeViewModel()
     }
 
+    override fun onPause() {
+        super.onPause()
+        player?.pause()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         player?.release()
@@ -133,7 +138,7 @@ class MainActivity : AppCompatActivity() {
     private fun observeViewModel() {
         lifecycleScope.launch {
             // repeatOnLifecycle cancels collection when the app goes to background
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 viewModel.uiState.collect { state ->
                     updateFaceStatusText(state)
                     updatePlayerStatus(state)
